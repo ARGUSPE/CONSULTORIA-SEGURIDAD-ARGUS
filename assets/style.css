@@ -6,10 +6,15 @@ header{background:var(--primary);color:#fff;display:flex;align-items:center;just
 header img{height:56px}
 nav a{color:#fff;text-decoration:none;margin:0 12px;font-weight:700}
 nav a:hover{text-decoration:underline}
-.hero{color:#fff;text-align:center;padding:96px 24px;background:linear-gradient(180deg, rgba(12,28,60,.85), rgba(12,28,60,.85)), url('https://images.unsplash.com/photo-1522163182402-834f871fd851?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat}
-.hero h1{font-size:42px;margin:0 0 8px}
-.hero p{font-size:20px;opacity:.95;margin:0 0 24px}
-.hero a{display:inline-block;background:var(--accent);color:#000;padding:14px 24px;border-radius:6px;text-decoration:none;font-weight:700}
+.hero{
+  color:#fff; text-align:center; padding:96px 24px;
+  background:
+    linear-gradient(180deg, rgba(12,28,60,.82), rgba(12,28,60,.82)),
+    image-set(
+      url('assets/hero_argus.webp') type('image/webp'),
+      url('assets/hero_argus.jpg')  type('image/jpeg')
+    ) center/cover no-repeat;
+}
 section{padding:56px 32px;background:#fff}
 h2{color:var(--primary);margin-top:0}
 .info-boxes,.services{display:flex;gap:20px;flex-wrap:wrap}
