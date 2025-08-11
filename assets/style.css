@@ -1,75 +1,47 @@
-/* --- ARGUS Corporate Styles (v3) --- */
-:root{
-  --primary:#0c1c3c;        /* azul corporativo */
-  --primary-2:#15284f;
-  --accent:#d4af37;         /* dorado */
-  --text:#222;
-  --bg:#f8f8f8;
-}
+/* --- ARGUS Styles (v10) --- */
+:root{--primary:#0c1c3c;--primary-2:#15284f;--accent:#d4af37;--text:#222;--bg:#f8f8f8}
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:var(--bg)}
 
-/* Header */
+/* Header fijo y legible */
 header{
-  background:var(--primary);
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:16px 32px;
+  position:sticky; top:0; z-index:1000;
+  background:rgba(12,28,60,.98);
+  color:#fff; display:flex; align-items:center; justify-content:space-between;
+  padding:14px 28px; box-shadow:0 4px 12px rgba(0,0,0,.18);
 }
-header .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
-header img, header .brand img{
-  height:64px; width:auto; display:block;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
-}
-nav a{color:#fff;text-decoration:none;margin:0 12px;font-weight:700}
+header img{height:56px;width:auto;display:block}
+nav a{color:#fff;text-decoration:none;margin:0 14px;font-weight:700}
 nav a:hover{text-decoration:underline}
-nav a:visited{color:#fff}
 
-/* Hero */
+/* HERO con imagen + overlay suave y espacio para el header */
 .hero{
-  color:#fff; text-align:center; padding:96px 24px;
+  color:#fff; text-align:center;
+  padding:120px 24px 96px; /* +top por header */
   background:
-    linear-gradient(180deg, rgba(12,28,60,.82), rgba(21,40,79,.82)),
+    linear-gradient(180deg, rgba(12,28,60,.35), rgba(12,28,60,.65)),
     image-set(
-      url('assets/hero_argus_photo.webp') type('image/webp'),
-      url('assets/hero_argus_photo.jpg')  type('image/jpeg')
+      url('/assets/hero_argus_photo_alt.webp?v=10') type('image/webp'),
+      url('/assets/hero_argus_photo_alt.jpg?v=10')  type('image/jpeg')
     ) center/cover no-repeat;
-  min-height:60vh;
+  min-height:72vh;
   display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px;
 }
-.hero h1{font-size:42px;margin:0 0 8px}
-.hero p{font-size:20px;opacity:.95;margin:0}
-
-/* CTA button in hero */
+.hero h1{font-size:42px;margin:0 0 6px;text-shadow:0 2px 6px rgba(0,0,0,.35)}
+.hero p{font-size:18px;opacity:.95;margin:0;text-shadow:0 1px 3px rgba(0,0,0,.35)}
 .hero a, .hero a:visited{
-  display:inline-block; background:var(--accent); color:#000;
-  padding:14px 24px; border-radius:6px; text-decoration:none; font-weight:700;
-  box-shadow:0 6px 18px rgba(0,0,0,.18);
+  display:inline-block;background:var(--accent);color:#000;
+  padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:800;
+  box-shadow:0 10px 24px rgba(0,0,0,.22)
 }
-.hero a:hover{ filter:brightness(.92); }
+.hero a:hover{filter:brightness(.92)}
 
-/* Sections */
+/* Secciones */
 section{padding:56px 32px;background:#fff}
-h2{color:var(--primary);margin-top:0}
-.info-boxes,.services{display:flex;gap:20px;flex-wrap:wrap}
-.box{
-  background:#f2f2f2;border-left:5px solid var(--accent);
-  padding:20px;border-radius:10px;flex:1;min-width:260px
-}
-
-/* Contact */
-.contact-form{background:#eee;padding:32px;border-radius:10px}
-.contact-form input,.contact-form textarea{
-  width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:6px
-}
-
-/* Footer */
-footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-size:14px}
 
 /* Responsive */
 @media (max-width:640px){
-  .hero{padding:72px 16px}
-  header{flex-direction:column;gap:10px}
+  header{flex-direction:column;gap:8px}
+  .hero{padding:128px 16px 72px}
+  .hero h1{font-size:30px}
 }
