@@ -1,5 +1,4 @@
-
-/* --- ARGUS Corporate Styles --- */
+/* --- ARGUS Corporate Styles (corregido) --- */
 :root { --primary:#0c1c3c; --accent:#d4af37; --text:#222; --bg:#f8f8f8 }
 * { box-sizing:border-box }
 body { margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--text); background:var(--bg) }
@@ -9,22 +8,21 @@ nav a { color:#fff; text-decoration:none; margin:0 12px; font-weight:700 }
 nav a:hover { text-decoration:underline }
 
 .hero {
-  color: #fff;
-  text-align: center;
-  padding: 96px 24px;
+  color:#fff;
+  text-align:center;
+  padding:96px 24px;
   background:
-    linear-gradient(180deg, rgba(12, 28, 60, .82), rgba(21, 40, 79, .82)),
+    linear-gradient(180deg, rgba(12,28,60,.82), rgba(21,40,79,.82)),
     image-set(
-      url('assets/hero_argus_photo_alt.webp?v=6') type('image/webp'),
-      url('assets/hero_argus_photo_alt.jpg?v=6') type('image/jpeg')
+      url('/assets/hero_argus_photo_alt.webp?v=7') type('image/webp'),
+      url('/assets/hero_argus_photo_alt.jpg?v=7') type('image/jpeg')
     ) center/cover no-repeat;
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 16px;
-}
+  min-height:60vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:16px;
 }
 
 section { padding:56px 32px; background:#fff }
