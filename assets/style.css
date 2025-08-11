@@ -33,8 +33,8 @@ nav a:visited{color:#fff}
   background:
     linear-gradient(180deg, rgba(12,28,60,.82), rgba(21,40,79,.82)),
     image-set(
-      url('assets/hero_argus.webp') type('image/webp'),
-      url('assets/hero_argus.jpg')  type('image/jpeg')
+      url('assets/hero_argus_photo.webp') type('image/webp'),
+      url('assets/hero_argus_photo.jpg')  type('image/jpeg')
     ) center/cover no-repeat;
   min-height:60vh;
   display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px;
