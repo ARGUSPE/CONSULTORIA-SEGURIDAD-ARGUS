@@ -1,0 +1,73 @@
+/* --- ARGUS Corporate Styles (v4) --- */
+/* Forza el uso de la foto en el HERO y rompe caché con ?v=4 */
+
+:root{
+  --primary:#0c1c3c;
+  --primary-2:#15284f;
+  --accent:#d4af37;
+  --text:#222;
+  --bg:#f8f8f8;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:var(--bg)}
+
+header{
+  background:var(--primary);
+  color:#fff;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 32px;
+}
+header .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+header img, header .brand img{height:64px;width:auto;display:block;filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+nav a{color:#fff;text-decoration:none;margin:0 12px;font-weight:700}
+nav a:hover{text-decoration:underline}
+nav a:visited{color:#fff}
+
+/* HERO con foto: usa WEBP + fallback JPG y gradiente oscuro. */
+.hero{
+  color:#fff; text-align:center; padding:96px 24px;
+  background:
+    linear-gradient(180deg, rgba(12,28,60,.82), rgba(21,40,79,.82)),
+    image-set(
+      url('assets/hero_argus_photo.webp?v=4') type('image/webp'),
+      url('assets/hero_argus_photo.jpg?v=4')  type('image/jpeg')
+    ) center/cover no-repeat;
+  min-height:60vh;
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px;
+}
+/* Si quieres probar sin image-set, comenta lo de arriba y usa SOLO JPG:
+.hero{
+  color:#fff; text-align:center; padding:96px 24px;
+  background:
+    linear-gradient(180deg, rgba(12,28,60,.82), rgba(21,40,79,.82)),
+    url('assets/hero_argus_photo.jpg?v=4') center/cover no-repeat;
+  min-height:60vh;
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px;
+}
+*/
+
+.hero h1{font-size:42px;margin:0 0 8px}
+.hero p{font-size:20px;opacity:.95;margin:0}
+
+/* Botón del héroe */
+.hero a, .hero a:visited{
+  display:inline-block;background:var(--accent);color:#000;
+  padding:14px 24px;border-radius:6px;text-decoration:none;font-weight:700;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+}
+.hero a:hover{filter:brightness(.92)}
+
+section{padding:56px 32px;background:#fff}
+h2{color:var(--primary);margin-top:0}
+.info-boxes,.services{display:flex;gap:20px;flex-wrap:wrap}
+.box{background:#f2f2f2;border-left:5px solid var(--accent);padding:20px;border-radius:10px;flex:1;min-width:260px}
+
+.contact-form{background:#eee;padding:32px;border-radius:10px}
+.contact-form input,.contact-form textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:6px}
+
+footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-size:14px}
+
+@media (max-width:640px){
+  .hero{padding:72px 16px}
+  header{flex-direction:column;gap:10px}
+}
