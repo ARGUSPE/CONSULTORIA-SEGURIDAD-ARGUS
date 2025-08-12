@@ -34,17 +34,14 @@ nav a:hover{text-decoration:underline}
 
 /* HERO con overlay suave, imagen responsive y espacio para el header */
 .hero{
-  color:#fff;
-  text-align:center;
-  padding:120px 24px 96px; /* top extra por header */
-    background:
-  linear-gradient(180deg, rgba(12,28,60,.82), rgba(21,40,79,.82)),
-  image-set(
-    url('assets/hero_argus_photo.webp?v=1001') type('image/webp'),
-    url('assets/hero_argus_photo.jpg?v=1001') type('image/jpeg')
-  ) center/cover no-repeat;
+  background:
+    linear-gradient(180deg, rgba(12,28,60,.82), rgba(21,40,79,.82)),
+    image-set(
+      url('assets/hero_argus_photo.webp?v=1001') type('image/webp'),
+      url('assets/hero_argus_photo.jpg?v=1001') type('image/jpeg')
+    ) center/cover no-repeat;
   min-height: 72vh;
-  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px;
+  display: flex; align-items: center; justify-content: center;
 }
 .hero h1{
   font-size: 42px; margin: 0 6px;
