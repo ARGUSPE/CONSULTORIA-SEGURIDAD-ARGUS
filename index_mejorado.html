@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consultoría & Seguridad ARGUS</title>
+  <meta name="description" content="Consultoría & Seguridad ARGUS: expertos en normativas SUCAMEC, diseño y construcción de polvorines y soluciones de seguridad integral." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <a href="#inicio" class="visually-hidden-focusable">Ir al contenido</a>
+
+  <header>
+    <img src="assets/logo_argus_web.png" alt="ARGUS — Consultoría y Seguridad" />
+    <nav aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-label="Presentación">
+      <h1>Soluciones Estratégicas en Seguridad y Consultoría</h1>
+      <p>Expertos en normativas SUCAMEC, construcción de polvorines y protección integral</p>
+      <a class="btn" href="#contacto" role="button" aria-label="Ir a contacto para solicitar asesoría">Solicita tu asesoría</a>
+    </section>
+
+    <section id="nosotros" aria-labelledby="ttl-nosotros">
+      <h2 id="ttl-nosotros">¿Quiénes Somos?</h2>
+      <div class="info-boxes" role="list">
+        <article class="box" role="listitem">
+          <p>En Consultoría &amp; Seguridad ARGUS ofrecemos soluciones integrales en seguridad privada y asesoría especializada en normativas SUCAMEC. Nuestro equipo combina experiencia técnica, legal y operativa.</p>
+        </article>
+        <article class="box" role="listitem">
+          <h3 class="visually-hidden">Nuestros valores</h3>
+          <ul class="clean-list">
+            <li><strong>Seguridad legal</strong> — cumplimiento normativo.</li>
+            <li><strong>Ingeniería especializada</strong> — diseño y supervisión.</li>
+            <li><strong>Confianza profesional</strong> — trato directo y responsable.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="servicios" aria-labelledby="ttl-servicios">
+      <h2 id="ttl-servicios">Servicios</h2>
+      <div class="services" role="list">
+        <article class="box" role="listitem">
+          <h3>Consultoría SUCAMEC</h3>
+          <p>Asesoría completa para licencias, trámites, normativas y auditorías técnicas.</p>
+        </article>
+        <article class="box" role="listitem">
+          <h3>Diseño y Supervisión de Polvorines</h3>
+          <p>Ingeniería, normativas y ejecución de almacenamiento: contenedor, subterráneo y semienterrado.</p>
+        </article>
+        <article class="box" role="listitem">
+          <h3>Seguridad Privada y Transporte</h3>
+          <p>Vigilancia, control de accesos y traslado seguro con personal capacitado.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" aria-labelledby="ttl-contacto">
+      <h2 id="ttl-contacto">Contáctanos</h2>
+      <div class="contact-form">
+        <form action="#" method="POST" novalidate>
+          <label class="visually-hidden" for="nombre">Nombre completo</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Nombre completo" required />
+          <label class="visually-hidden" for="correo">Correo electrónico</label>
+          <input id="correo" name="correo" type="email" placeholder="Correo electrónico" required />
+          <label class="visually-hidden" for="telefono">Teléfono</label>
+          <input id="telefono" name="telefono" type="tel" placeholder="Teléfono" inputmode="tel" />
+          <label class="visually-hidden" for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Mensaje"></textarea>
+          <input type="submit" value="Enviar mensaje" aria-label="Enviar formulario de contacto" />
+        </form>
+        <address>
+          <p><strong>Dirección:</strong> Los Viñedos H - 16, Ica – Perú</p>
+          <p><strong>Teléfono:</strong> <a href="tel:+51999931012">+51 999 931 012</a></p>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>© <span id="y"></span> Consultoría &amp; Seguridad ARGUS | RUC: 20612173797</small>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+  <style>
+    .visually-hidden{
+      position:absolute !important; height:1px; width:1px; overflow:hidden;
+      clip:rect(1px, 1px, 1px, 1px); white-space:nowrap; border:0; padding:0; margin:-1px;
+    }
+    .visually-hidden-focusable:focus{
+      position:static !important; height:auto; width:auto; clip:auto; margin:8px;
+      display:inline-block; background:#fff; padding:6px 10px; border-radius:6px;
+    }
+    .clean-list{list-style: none; padding:0; margin:0}
+    .clean-list li{padding-left:0}
+    section[id]{ scroll-margin-top: 88px; }
+  </style>
+</body>
+</html>
