@@ -159,17 +159,21 @@ header nav{
   }
 }
 section[id]{ scroll-margin-top: 92px; }    
-logo-container {
+.logo-container {
   display: flex;
   align-items: center;
+  gap: 10px; /* espacio entre logo y texto */
 }
+
 .logo-img {
-  height: 50px; 
-  margin-right: 10px;
+  height: 50px; /* tamaño del logo */
+  width: auto; /* mantiene proporción */
 }
+
 .logo-text {
   color: white;
-  font-size: 1.2rem; 
+  font-size: 1.2rem;
   font-weight: bold;
-  font-family: inherit; 
+  font-family: inherit;
+  white-space: nowrap; /* evita que baje de línea */
 }
