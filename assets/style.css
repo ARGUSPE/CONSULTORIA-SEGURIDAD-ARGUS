@@ -1,15 +1,133 @@
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f8f8; color: #222; }
-header { background-color: #0c1c3c; color: #fff; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
-header img { height: 60px; }
-nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
-.hero { background: url('https://images.unsplash.com/photo-1581092580505-4c2b3a728162') center/cover no-repeat; color: #fff; padding: 100px 40px; text-align: center; }
-.hero h1 { font-size: 42px; margin-bottom: 10px; }
-.hero p { font-size: 20px; margin-bottom: 30px; }
-.hero a { background: #d4af37; color: #000; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; }
-section { padding: 60px 40px; background: #fff; }
-h2 { color: #0c1c3c; margin-bottom: 20px; }
-.services, .info-boxes { display: flex; gap: 20px; flex-wrap: wrap; }
-.box { background: #f2f2f2; border-left: 5px solid #d4af37; padding: 20px; flex: 1; min-width: 280px; border-radius: 8px; }
-.contact-form { background: #eee; padding: 40px; border-radius: 10px; }
-.contact-form input, .contact-form textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; }
-footer { background: #0c1c3c; color: #fff; text-align: center; padding: 20px; font-size: 14px; }
+/* --- ARGUS Styles (v12) --- */
+
+/* Variables corporativas */
+:root{
+  --primary:#0c1c3c;
+  --primary-2:#15284f;
+  --accent:#d4af37;
+  --text:#222;
+  --bg:#f8f8f8;
+}
+
+/* Reset mínimo */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.5;
+}
+
+/* Header fijo y limpio */
+header{
+  position:sticky; top:0; z-index:1000;
+  background:rgba(12,28,60,.98);
+  color:#fff; display:flex; align-items:center; justify-content:space-between;
+  padding:14px 28px; box-shadow:0 4px 12px rgba(0,0,0,.18);
+}
+header img{height:56px; width:auto; display:block}
+nav a{
+  color:#fff; text-decoration:none; margin:0 14px; font-weight:700;
+}
+nav a:hover{text-decoration:underline}
+
+/* HERO compacto, legible y proporcionado */
+.hero{
+  color:#fff; text-align:center;
+  /* top extra por header */
+  padding:92px 24px 88px;
+
+  /* Overlay + imagen con fallback */
+  background:
+    linear-gradient(180deg, rgba(14,26,49,.82), rgba(21,40,79,.82)),
+    url('../assets/hero_argus_photo.jpg?v=1201');
+
+  /* Preferir WebP donde exista */
+  background:
+    linear-gradient(180deg, rgba(14,26,49,.82), rgba(21,40,79,.82)),
+    -webkit-image-set(url('../assets/hero_argus_photo.webp?v=1201') type('image/webp'),
+                      url('../assets/hero_argus_photo.jpg?v=1201')  type('image/jpeg'));
+  background:
+    linear-gradient(180deg, rgba(14,26,49,.82), rgba(21,40,79,.82)),
+    image-set(url('../assets/hero_argus_photo.webp?v=1201') type('image/webp'),
+              url('../assets/hero_argus_photo.jpg?v=1201')  type('image/jpeg'));
+
+  /* Mantener proporción y encuadre */
+  background-position:center 32%;
+  background-size:cover;
+  background-repeat:no-repeat;
+
+  /* Altura controlada para que no “descuadre” */
+  min-height:48vh;       /* más compacto */
+  height:52vh;           /* target cómodo */
+  max-height:560px;      /* evita héroes gigantes */
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px;
+}
+
+.hero h1{
+  font-size:clamp(28px,4.4vw,44px);
+  margin:0; letter-spacing:.3px; text-shadow:0 2px 10px rgba(0,0,0,.45);
+}
+.hero p{
+  font-size:clamp(14px,2vw,18px);
+  margin:0 0 18px; opacity:.98; text-shadow:0 1px 6px rgba(0,0,0,.45);
+}
+.hero a{
+  display:inline-block; padding:12px 22px; font-weight:700;
+  color:#0b1220; background:#fff; border:1px solid #fff; border-radius:8px; text-decoration:none
+}
+.hero a:hover{ background:transparent; color:#fff }
+
+/* Secciones genéricas */
+section:not(.hero){
+  padding:56px 24px; max-width:1100px; margin:0 auto;
+}
+h2{color:var(--primary); margin:0 0 24px}
+
+/* Nosotros / Servicios */
+.info-boxes, .services{
+  display:flex; align-items:stretch; justify-content:center; gap:16px; flex-wrap:wrap;
+}
+.box{
+  background:#f2f2f2; border-left:5px solid var(--accent);
+  padding:16px 20px; flex:1; min-width:280px; border-radius:8px;
+}
+.services .box{ border-left-color:var(--primary-2) }
+.box h3{ margin:0 0 8px; color:var(--primary-2) }
+
+/* Contacto */
+.contact-form{
+  display:flex; gap:20px; flex-wrap:wrap; align-items:flex-start
+}
+.contact-form form{
+  background:#eee; padding:20px; border-radius:10px; border:1px solid #ddd;
+  flex:1; min-width:280px
+}
+.contact-form input,
+.contact-form textarea{
+  width:100%; padding:10px; margin-bottom:12px; border:1px solid #ccc; border-radius:6px;
+  font:inherit
+}
+.contact-form input[type=submit]{
+  background:var(--accent); border:none; color:#0b1220; font-weight:700; cursor:pointer
+}
+.contact-form input[type=submit]:hover{ filter:brightness(.95) }
+
+.contact-form p{ margin:0; flex:1; min-width:280px }
+
+/* Footer */
+footer{
+  margin-top:28px;
+  background:var(--primary);
+  color:#fff; text-align:center; padding:20px
+}
+
+/* Navegación suave al anclar */
+section[id]{ scroll-margin-top: 88px; }
+
+/* Responsive */
+@media (max-width: 768px){
+  header img{height:48px}
+  .hero{ padding:96px 16px 72px; min-height:52vh; height:56vh; }
+}
