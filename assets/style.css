@@ -131,3 +131,59 @@ section[id]{ scroll-margin-top: 88px; }
   header img{height:48px}
   .hero{ padding:96px 16px 72px; min-height:52vh; height:56vh; }
 }
+/* ===== NAV: estable y sin salto ===== */
+header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header nav{
+  display: flex;
+  align-items: center;
+  gap: 22px;           /* espacio controlado */
+  flex-wrap: nowrap;   /* evita que los enlaces bajen de línea */
+}
+@media (max-width: 980px){
+  header{ padding: 10px 16px; }
+  header nav{ gap: 14px; }
+  nav a{ font-size: 15px; margin: 0; }
+}
+@media (max-width: 720px){
+  header img{ height: 44px; }
+  nav a{ font-size: 14px; }
+}
+
+/* ===== HERO: 3 caras visibles sin “gigantizar” ===== */
+/* base: muestra más alto de la foto (subimos foco en Y) */
+.hero{
+  /* si ya tienes background-* definidos antes, este bloque los sobreescribe suavemente */
+  background-position: 50% 22%;   /* mueve el encuadre hacia arriba (Y=22%) */
+  min-height: 50vh;
+  height: 56vh;                   /* un poco más alto para que entren frentes */
+  max-height: 620px;
+}
+
+/* pantallas muy anchas: aún un poco más alto y foco más arriba */
+@media (min-width: 1400px){
+  .hero{
+    height: 58vh;
+    background-position: 50% 18%;
+  }
+}
+
+/* ajuste fino por ancho (X) para que no se coma a la persona derecha en tablets */
+@media (max-width: 1200px){
+  .hero{ background-position: 52% 22%; }
+}
+@media (max-width: 992px){
+  .hero{ background-position: 58% 24%; }
+}
+@media (max-width: 768px){
+  .hero{
+    height: 58vh;                 /* un pelín más de alto en móvil */
+    background-position: 62% 28%; /* corre un poco a la dcha y baja un poco */
+  }
+}
+
+/* ===== Anclajes: que el header fijo no tape los títulos ===== */
+section[id]{ scroll-margin-top: 92px; }    /* ajusta si tu header es más alto/ bajo */
